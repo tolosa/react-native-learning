@@ -6,8 +6,17 @@ export default class ReactNativeLearning extends Component {
     return (
       <View style={styles.container}>
         <Text>Hello world!</Text>
+        <Greeting name='Leonardo'></Greeting>
         <Bananas />
       </View>
+    );
+  }
+}
+
+class Greeting extends Component {
+  render() {
+    return (
+      <Text>Hello {this.props.name}!</Text>
     );
   }
 }
