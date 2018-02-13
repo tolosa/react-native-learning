@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, TextInput, View, Image } from 'react-native';
+import { StyleSheet, Text, TextInput, Button, Alert, View, Image } from 'react-native';
 
 export default class ReactNativeLearning extends Component {
   render() {
@@ -10,6 +10,7 @@ export default class ReactNativeLearning extends Component {
         <Bananas />
         <Blink text="I'm blinking!" />
         <PizzaTranslator />
+        <ButtonDemo />
       </View>
     );
   }
@@ -90,6 +91,19 @@ class PizzaTranslator extends Component {
       </View>
     );
   }
+}
+
+class ButtonDemo extends Component {
+  _onPressButton() {
+    Alert.alert('You tapped the button!');
+  }
+  render() {
+    return (
+      <Button
+        onPress={this._onPressButton}
+        title='Press Me' />
+    );
+  };
 }
 
 // TODO: learn how to manage styles across different controls
