@@ -8,6 +8,7 @@ export default class ReactNativeLearning extends Component {
         <Text>Hello world!</Text>
         <Greeting name='Leonardo'></Greeting>
         <Bananas />
+        <Blink text="I'm blinking!" />
       </View>
     );
   }
@@ -29,6 +30,27 @@ class Bananas extends Component {
     };
     return (
       <Image source={image} style={{width: 193, height: 110}}/>
+    );
+  }
+}
+
+class Blink extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { isShowingText: true };
+
+    // Toggle the state every second
+    setInterval(() => {
+      this.setState(previousState => {
+        return { isShowingText: !previousState.isShowingText };
+      });
+    }, 700);
+  }
+
+  render() {
+    let display = this.state.isShowingText ? this.props.text : ' ';
+    return (
+      <Text>{display}</Text>
     );
   }
 }
