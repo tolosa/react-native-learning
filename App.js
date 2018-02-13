@@ -13,6 +13,7 @@ export default class ReactNativeLearning extends Component {
   }
 }
 
+// TODO: learn how to define components into separate files
 class Greeting extends Component {
   render() {
     return (
@@ -32,6 +33,7 @@ class Bananas extends Component {
   }
 }
 
+// TODO: learn how to manage styles across different controls
 const styles = StyleSheet.create({
   container: {
     flex: 1,
