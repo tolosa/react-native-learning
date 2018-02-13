@@ -75,18 +75,18 @@ class PizzaTranslator extends Component {
     super(props);
     this.state = { text: '' };
   }
-
+  _translate(text) { // TODO: learn conventions for private methods
+    return text.split(' ').map((word) => word && '🍕').join(' ');
+  }
   render() {
-    // TODO: extract text processing to helper method in component
     return (
       <View style={{padding: 10}}>
         <TextInput
           style={{height: 40}}
           placeholder='Type here to translate!'
-          onChangeText={(text) => this.setState({text})}
-        />
+          onChangeText={(text) => this.setState({text})} />
         <Text style={{padding: 10, fontSize: 30}}>
-          {this.state.text.split(' ').map((word) => word && '🍕').join(' ')}
+          {this._translate(this.state.text)}
         </Text>
       </View>
     );
