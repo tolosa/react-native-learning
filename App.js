@@ -50,7 +50,7 @@ class Blink extends Component {
   render() {
     let display = this.state.isShowingText ? this.props.text : ' ';
     return (
-      <Text>{display}</Text>
+      <Text style={styles.blinking}>{display}</Text>
     );
   }
 }
@@ -63,4 +63,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  blinking: {
+    color: 'red',
+    fontWeight: 'bold',
+  }
 });
