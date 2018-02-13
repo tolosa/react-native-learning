@@ -6,7 +6,7 @@ export default class ReactNativeLearning extends Component {
     return (
       <View style={styles.container}>
         <Text>Hello world!</Text>
-        <Greeting name='Leonardo'></Greeting>
+        <Greeting name='Leonardo' />
         <Bananas />
         <Blink text="I'm blinking!" />
       </View>
@@ -72,7 +72,7 @@ class FlexBasics extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
   },
