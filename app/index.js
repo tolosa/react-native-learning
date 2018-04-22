@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, FlatList, TouchableHighlight, StyleSheet } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
-// TODO: find a way to load all files in folder
 import Greeting from './components/Greeting';
 import Banana from './components/Banana';
 import Blink from './components/Blink';
@@ -26,19 +25,26 @@ class ReactNativeLearning extends Component {
   }
 }
 
+// TODO: duplicated values, populate from StackNavigator data
+const navListData = [{key: 'Banana'}, {key: 'Greeting'}]
+
 class HomeScreen extends Component {
+  renderItem = ({item}) => {
+    // TODO: make elements look interactive
+    return (
+      <TouchableHighlight style={{padding: 7}}
+        onPress={() => this.props.navigation.navigate(item.key)}>
+        <Text>{item.key}</Text>
+      </TouchableHighlight>
+    )
+  }
   render() {
     return (
-      // TODO: use somelist control instead of buttons
       <View style={styles.container}>
         <Text>Go to demo:</Text>
-        <Button
-          title='Banana'
-          onPress={() => this.props.navigation.navigate('Banana')}
-        />
-        <Button
-          title='Greeting'
-          onPress={() => this.props.navigation.navigate('Greeting', { name: 'Leo' })}
+        <FlatList
+          data={navListData}
+          renderItem={this.renderItem}
         />
       </View>
     )
@@ -73,7 +79,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-    alignItems: 'center',
-    justifyContent: 'center',
+    //alignItems: 'center',
+    //justifyContent: 'center',
   },
 });
