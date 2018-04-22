@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, Button, StyleSheet } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
 // TODO: find a way to load all files in folder
@@ -10,6 +10,7 @@ import ButtonDemo from './components/ButtonDemo';
 import PizzaTranslator from './components/PizzaTranslator';
 import FlexBasics from './components/FlexBasics';
 
+// TODO: no longer used, remove after adding all pages in navigator
 class ReactNativeLearning extends Component {
   render() {
     return (
@@ -25,11 +26,33 @@ class ReactNativeLearning extends Component {
   }
 }
 
-const RootStack = StackNavigator({
-  Home: {
-    screen: ReactNativeLearning,
+class HomeScreen extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>Go to demo:</Text>
+        <Button
+          title='Banana'
+          onPress={() => this.props.navigation.navigate('Banana')}
+        />
+      </View>
+    )
+  }
+}
+
+const RootStack = StackNavigator(
+  {
+    Home: {
+      screen: HomeScreen,
+    },
+    Banana: {
+      screen: Banana,
+    }
   },
-});
+  {
+    initialRouteName: 'Home',
+  }
+)
 
 export default class App extends Component {
   render() {
