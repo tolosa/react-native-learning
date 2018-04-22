@@ -10,6 +10,8 @@ import ButtonDemo from './components/ButtonDemo';
 import PizzaTranslator from './components/PizzaTranslator';
 import FlexBasics from './components/FlexBasics';
 
+// Home screen
+// TODO: move to separate file
 const navListData = [
   {
     key: 'Button Demo',
@@ -64,6 +66,7 @@ class HomeScreen extends Component {
   }
 }
 
+// Stack navigation
 const navigatorData = {
   Home: {
     screen: HomeScreen,
@@ -83,7 +86,9 @@ export default class App extends Component {
   }
 }
 
+// Styles
 // TODO: learn how to manage styles across different controls
+// TODO: move to separate file
 const styles = StyleSheet.create({
   container: {
     flex: 1,
