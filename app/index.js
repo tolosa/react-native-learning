@@ -10,27 +10,31 @@ import ButtonDemo from './components/ButtonDemo';
 import PizzaTranslator from './components/PizzaTranslator';
 import FlexBasics from './components/FlexBasics';
 
-// TODO: duplicated values, populate from StackNavigator data
 const navListData = [
   {
-    key: 'ButtonDemo',
-    description: 'Simple button and alert demo',
+    key: 'Button Demo',
+    description: 'Simple button and alert',
+    screen: ButtonDemo,
   },
   {
-    key: 'Banana',
+    key: 'Banana Demo',
     description: 'A SFW banana picture',
+    screen: Banana,
   },
   {
-    key: 'Blink',
-    description: 'Blinking text demo',
+    key: 'Blink Demo',
+    description: 'Blinking text',
+    screen: Blink,
   },
   {
-    key: 'PizzaTranslator',
+    key: 'Pizza Translator Demo',
     description: 'Translate text to pizza language',
+    screen: PizzaTranslator,
   },
   {
-    key: 'Greeting',
+    key: 'Greetings Demo',
     description: 'Greets you',
+    screen: Greeting,
   },
 ]
 
@@ -60,31 +64,18 @@ class HomeScreen extends Component {
   }
 }
 
-const RootStack = StackNavigator(
-  {
-    Home: {
-      screen: HomeScreen,
-    },
-    ButtonDemo: {
-      screen: ButtonDemo,
-    },
-    Banana: {
-      screen: Banana,
-    },
-    Blink: {
-      screen: Blink,
-    },
-    PizzaTranslator: {
-      screen: PizzaTranslator,
-    },
-    Greeting: {
-      screen: Greeting,
-    },
-  },
-  {
-    initialRouteName: 'Home',
+const navigatorData = {
+  Home: {
+    screen: HomeScreen,
   }
-)
+}
+
+for(let val of navListData) {
+  const {key, screen} = val
+  navigatorData[key] = { screen: screen }
+}
+
+const RootStack = StackNavigator(navigatorData, { initialRouteName: 'Home'})
 
 export default class App extends Component {
   render() {
