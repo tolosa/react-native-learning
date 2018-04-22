@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 
 export default class Greeting extends Component {
-  static navigationOptions = {
-    title: 'Greeting demo',
+  static navigationOptions = ({ navigation }) => {
+    return { title: `Greeting demo for ${navigation.state.params.name}` }
   }
   render() {
     return (
