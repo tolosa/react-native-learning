@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 
 // TODO: find a way to load all files in folder
 import Greeting from './components/Greeting';
@@ -9,7 +10,7 @@ import ButtonDemo from './components/ButtonDemo';
 import PizzaTranslator from './components/PizzaTranslator';
 import FlexBasics from './components/FlexBasics';
 
-export default class ReactNativeLearning extends Component {
+class ReactNativeLearning extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -23,6 +24,12 @@ export default class ReactNativeLearning extends Component {
     );
   }
 }
+
+export default StackNavigator({
+  Home: {
+    screen: ReactNativeLearning,
+  },
+});
 
 // TODO: learn how to manage styles across different controls
 const styles = StyleSheet.create({
