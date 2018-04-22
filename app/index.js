@@ -25,11 +25,17 @@ class ReactNativeLearning extends Component {
   }
 }
 
-export default StackNavigator({
+const RootStack = StackNavigator({
   Home: {
     screen: ReactNativeLearning,
   },
 });
+
+export default class App extends Component {
+  render() {
+    return <RootStack />
+  }
+}
 
 // TODO: learn how to manage styles across different controls
 const styles = StyleSheet.create({
