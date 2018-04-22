@@ -35,14 +35,15 @@ const navListData = [
 ]
 
 class HomeScreen extends Component {
-  renderItem({item}) {
+  renderItem = ({item}) => {
     const screen = item.key
     const description = item.description
+    const {navigation} = this.props
     return (
       <ListItem
         title={screen}
         subtitle={description}
-        onPress={() => this.props.navigation.navigate(screen)}
+        onPress={() => navigation.navigate(screen)}
       />
     )
   }
