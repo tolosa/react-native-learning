@@ -9,22 +9,6 @@ import ButtonDemo from './components/ButtonDemo';
 import PizzaTranslator from './components/PizzaTranslator';
 import FlexBasics from './components/FlexBasics';
 
-// TODO: no longer used, remove after adding all pages in navigator
-class ReactNativeLearning extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Hello world!</Text>
-        <Greeting name='Leonardo' />
-        <Banana />
-        <Blink text="I'm blinking!" />
-        <PizzaTranslator />
-        <ButtonDemo />
-      </View>
-    );
-  }
-}
-
 // TODO: duplicated values, populate from StackNavigator data
 const navListData = [{key: 'ButtonDemo'}, {key: 'Banana'}, {key: 'Blink'}, {key: 'PizzaTranslator'}, {key: 'Greeting'}]
 
