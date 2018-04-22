@@ -29,11 +29,16 @@ class ReactNativeLearning extends Component {
 class HomeScreen extends Component {
   render() {
     return (
+      // TODO: use somelist control instead of buttons
       <View style={styles.container}>
         <Text>Go to demo:</Text>
         <Button
           title='Banana'
           onPress={() => this.props.navigation.navigate('Banana')}
+        />
+        <Button
+          title='Greeting'
+          onPress={() => this.props.navigation.navigate('Greeting', { name: 'Leo' })}
         />
       </View>
     )
@@ -47,6 +52,9 @@ const RootStack = StackNavigator(
     },
     Banana: {
       screen: Banana,
+    },
+    Greeting: {
+      screen: Greeting,
     }
   },
   {
