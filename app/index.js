@@ -35,7 +35,7 @@ const navListData = [
 ]
 
 class HomeScreen extends Component {
-  renderItem = ({item}) => {
+  renderItem({item}) {
     const screen = item.key
     const description = item.description
     return (
