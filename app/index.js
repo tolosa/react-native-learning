@@ -26,7 +26,7 @@ class ReactNativeLearning extends Component {
 }
 
 // TODO: duplicated values, populate from StackNavigator data
-const navListData = [{key: 'Banana'}, {key: 'Greeting'}]
+const navListData = [{key: 'ButtonDemo'}, {key: 'Banana'}, {key: 'Blink'}, {key: 'PizzaTranslator'}, {key: 'Greeting'}]
 
 class HomeScreen extends Component {
   renderItem = ({item}) => {
@@ -56,12 +56,21 @@ const RootStack = StackNavigator(
     Home: {
       screen: HomeScreen,
     },
+    ButtonDemo: {
+      screen: ButtonDemo,
+    },
     Banana: {
       screen: Banana,
     },
+    Blink: {
+      screen: Blink,
+    },
+    PizzaTranslator: {
+      screen: PizzaTranslator,
+    },
     Greeting: {
       screen: Greeting,
-    }
+    },
   },
   {
     initialRouteName: 'Home',
