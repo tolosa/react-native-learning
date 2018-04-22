@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, FlatList, TouchableHighlight, StyleSheet } from 'react-native';
 import { StackNavigator } from 'react-navigation';
+import { ListItem } from 'react-native-elements'
 
 import Greeting from './components/Greeting';
 import Banana from './components/Banana';
@@ -14,12 +15,12 @@ const navListData = [{key: 'ButtonDemo'}, {key: 'Banana'}, {key: 'Blink'}, {key:
 
 class HomeScreen extends Component {
   renderItem = ({item}) => {
-    // TODO: make elements look interactive
     return (
-      <TouchableHighlight style={{padding: 7}}
-        onPress={() => this.props.navigation.navigate(item.key)}>
-        <Text>{item.key}</Text>
-      </TouchableHighlight>
+      <ListItem
+        title={item.key}
+        subtitle='TODO: add subtitle here'
+        onPress={() => this.props.navigation.navigate(item.key)}
+      />
     )
   }
   render() {
