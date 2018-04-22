@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Text, Button, View } from 'react-native';
 
 export default class Greeting extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -7,7 +7,13 @@ export default class Greeting extends Component {
   }
   render() {
     return (
-      <Text>Hello {this.props.navigation.state.params.name}!</Text>
+      <View>
+        <Text>Hello {this.props.navigation.state.params.name}!</Text>
+        <Button
+          title='Change name'
+          onPress={() => this.props.navigation.setParams({name: 'Juan'})}
+        />
+      </View>
     )
   }
 }
